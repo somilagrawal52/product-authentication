@@ -4,8 +4,8 @@ const authMiddleware = require("../middleware/user");
 const {
   productregisterroute,
   getallproducts,
-  getproductbyid,
-  changeproductbyid,
+  getproduct,
+  changeproduct,
   deleteproductbyid,
   registerroute,
   loginroute,
@@ -13,8 +13,8 @@ const {
 
 router.post("/products", authMiddleware, productregisterroute);
 router.get("/products", authMiddleware, getallproducts);
-router.get("/products/:id", authMiddleware, getproductbyid);
-router.put("/products/:id", authMiddleware, changeproductbyid);
+router.get("/products/:query", authMiddleware, getproduct);
+router.put("/products/:query", authMiddleware, changeproduct);
 router.delete("/products/:id", authMiddleware, deleteproductbyid);
 router.post("/register", registerroute);
 router.post("/login", loginroute);
